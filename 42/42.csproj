@@ -54,8 +54,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Abstract\IWorkerRepository.cs" />
-    <Compile Include="SqlServer\SqlAuthorBookRepository.cs" />
-    <Compile Include="SqlServer\SqlWorkerRepository.cs" />
+    <Compile Include="SqlServer - Add SqlAuthorRepository\SqlAuthorBookRepository.cs" />
+    <Compile Include="SqlServer - Add SqlAuthorRepository\SqlBookRepository.cs" />
+    <Compile Include="SqlServer - Add SqlAuthorRepository\SqlWorkerRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

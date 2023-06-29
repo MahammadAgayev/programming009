@@ -69,6 +69,7 @@ where ab.AuthorId = @Id";
 
         public List<AuthorBook> GetByBookId(int id)
         {
+            //TODO: implement it
             throw new NotImplementedException();
         }
 
