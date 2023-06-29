@@ -1,0 +1,140 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Net.Http.Headers;
+using System.Net.NetworkInformation;
+
+namespace _24
+{
+    class Queue
+    {
+        private int[] _array;
+        private int _head;
+        private int _tail; //-> count
+
+        public Queue()
+        {
+            _array = new int[4];
+        }
+
+        public void Enqueue(int data)
+        {
+            if (_array.Length == _tail && _head < _array.Length / 2)
+            {
+                int[] newArr = new int[_array.Length * 2];
+
+                for (int i = 0; i < _array.Length; i++)
+                {
+                    newArr[i] = _array[i];
+                }
+
+                _array = newArr;
+            }
+            else if (_tail == _array.Length)
+            {
+                _tail = 0;
+            }
+
+            if (_tail + 1 == _head)
+            {
+                this.ExpandAndRestructureArray();
+            }
+
+            _array[_tail] = data;
+            _tail++;
+        }
+
+        public int Dequeue()
+        {
+            if (_head == _tail)
+            {
+                Console.WriteLine("Queue is empty");
+                return -1;
+            }
+
+            int element = _array[_head];
+
+            _head++;
+            if (_head == _array.Length && _tail < _head)
+            {
+                _head = 0;
+            }
+
+            return element;
+        }
+
+        public int Pop()
+        {
+            int element = _array[_head];
+
+            return element;
+        }
+
+
+        private void ExpandAndRestructureArray()
+        {
+            int[] newArr = new int[_array.Length * 2];
+
+            for (int i = 0; i < _array.Length; i++)
+            {
+                int index = (_head - 1 + i) % _array.Length;
+
+                newArr[i] = _array[index];
+            }
+
+            _array = newArr;
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //queue
+
+            //Double LinkedList 
+            //list ve methodlarin yazmaq
+
+            //1 2 3 4 5 6
+
+            //1
+            //
+
+            //Queue queue = new Queue();
+
+            //queue.Enqueue(1);
+            //queue.Enqueue(2);
+
+            //Console.WriteLine(queue.Dequeue());
+            //Console.WriteLine(queue.Dequeue());
+
+            //Console.WriteLine(queue.Dequeue());
+
+            Queue queue = new Queue();
+
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+            queue.Enqueue(5);
+            queue.Enqueue(6);
+            queue.Enqueue(7);
+
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
+
+            queue.Enqueue(8);
+            queue.Enqueue(9);
+            queue.Enqueue(10);
+            queue.Enqueue(11);
+            queue.Enqueue(12);
+            queue.Enqueue(13);
+
+            //Write queue with linked list
+
+        }
+    }
+}

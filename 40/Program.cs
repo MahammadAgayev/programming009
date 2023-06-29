@@ -1,0 +1,255 @@
+﻿using Microsoft.VisualBasic;
+
+using System;
+using System.Collections.Generic;
+using System.IO.Pipes;
+using System.Linq;
+using System.Net.Http.Headers;
+using System.Security.Permissions;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Web;
+
+namespace _40
+{
+    class Computer
+    {
+        public int CoreCount { get; set; }
+        public double CpuSpeed { get; set; }
+        public int Ram { get; set; }
+    }
+
+    class GameComputer
+    {
+        public int GpuCoreCount { get; set; }
+        public double GpuSpeed { get; set; }
+    }
+
+    class Car
+    {
+        public int MaxSpeed { get; set; }
+    }
+
+    class Bmw : Car
+    {
+        public string BmwLogo { get; set; }
+    }
+
+    class Duck
+    {
+        public int Health { get; set; } = 100;
+
+        public void TakeHit()
+        {
+            Health -= 20;
+
+            if (Health <= 0)
+            {
+                Console.WriteLine("This one has been killed");
+            }
+        }
+
+        public virtual void Move()
+        {
+            Console.WriteLine("I'm moving");
+        }
+    }
+
+    //child/derived   base/parent class
+    class WalkingDuck : Duck
+    {
+        public override void Move()
+        {
+            Console.WriteLine("I'm walking...");
+        }
+    }
+
+    class FlyingDuck : Duck
+    {
+        public override void Move()
+        {
+            Console.WriteLine("I'm flying...");
+        }
+    }
+    
+    class Animal
+    {
+        public int LegCount { get; set; }
+        public string Name { get; }
+
+        public virtual void Move()
+        {
+            Console.WriteLine("I'm moving");
+        }
+    }
+
+    class Bird : Animal
+    {
+        public override void Move()
+        {
+            Console.WriteLine("flying...");
+        }
+    }
+
+    class Eagle : Bird
+    {
+
+    }
+
+    class Fish : Animal
+    {
+        public override void Move()
+        {
+            Console.WriteLine("swimming..."); 
+        }
+    }
+
+    class BaseClass
+    {
+        public virtual void Hello()
+        {
+            Console.WriteLine("Hello from base class");
+        }
+
+        public void Hello2()
+        {
+            Console.WriteLine("Hello from base class 2");
+        }
+    }
+
+    class DerivedClass : BaseClass
+    {
+        public override void Hello()
+        {
+            Console.WriteLine("Hello from derived class");
+        }
+
+        public new void Hello2()
+        {
+            Console.WriteLine("Hello from derived class 2");
+        }
+    }
+
+
+
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //OOP
+
+            //don't shoot your leg
+
+            //törəmə, miras
+            //inheritence
+            //code reuse
+
+            //Duck k = new Duck();
+            //k.Walk();
+
+            //FlyingDuck f = new FlyingDuck();
+            //f.Fly();
+
+            //WalkingDuck w = new WalkingDuck();
+            //w.TakeHit();
+
+            //FlyingDuck f = new FlyingDuck();
+            //f.TakeHit();
+
+            //w.Walk();
+            //f.Fly();
+
+            //List<WalkingDuck> wDucks = new List<WalkingDuck>();
+            //List<FlyingDuck> fDucks = new List<FlyingDuck>();
+
+            //wDucks.Add(new WalkingDuck());
+            //wDucks.Add(new WalkingDuck());
+            //wDucks.Add(new WalkingDuck());
+            //fDucks.Add(new FlyingDuck());
+            //fDucks.Add(new FlyingDuck());
+
+            //foreach (var item in wDucks)
+            //{
+            //    item.Walk();
+            //}
+
+            //foreach (var item in fDucks)
+            //{
+            //    item.Fly();
+            //}
+
+            //Duck d = new WalkingDuck();
+            //WalkingDuck c = new Duck();
+
+            //List<Duck> ducks = new List<Duck>();
+
+            //ducks.Add(new WalkingDuck());
+            //ducks.Add(new WalkingDuck());
+            //ducks.Add(new WalkingDuck());
+            //ducks.Add(new FlyingDuck());
+            //ducks.Add(new FlyingDuck());
+
+            //foreach (var item in ducks)
+            //{
+            //    item.Move();
+            //}
+
+            //List<Animal> animals = new List<Animal>();
+
+            //Console.Write("Enter animal count:");
+            //int n = int.Parse(Console.ReadLine());
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //    Console.Write("Animal Name: ");
+            //    string name = Console.ReadLine();
+
+            //    if (name == "bird")
+            //    {
+            //        Bird b = new Bird();
+            //        b.LegCount = 2;
+            //        animals.Add(new Bird());
+
+            //    }
+            //    else if (name == "fish")
+            //    {
+            //        Fish f = new Fish();
+            //        f.LegCount = 0;
+            //        animals.Add(f);
+            //    }
+            //}
+
+            //foreach (var item in animals)
+            //{
+            //    item.Move();
+            //}
+
+
+            //Animal a = new Fish();
+            //Fish f = new Fish();
+
+            //a.Move();
+            //f.Move();
+
+            //BaseClass b = new BaseClass();
+
+            //b.Hello();
+            //b.Hello2();
+
+            //DerivedClass d = new DerivedClass();
+
+            //d.Hello();
+            //d.Hello2();
+
+            //BaseClass b = new DerivedClass();
+
+            //b.Hello();
+            //b.Hello2();
+
+            //Bird e = new Eagle();
+            //e.Move();
+        }
+    }
+}
