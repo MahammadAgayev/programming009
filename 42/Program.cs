@@ -96,7 +96,7 @@ namespace _42
             //singletone
             //factory
 
-            IWorkerRepository repository = CreateSqlRepository();
+            IWorkerRepository repository = new InmemoryWorkerRepository(); //CreateSqlRepository();
 
             while (true)
             {
@@ -149,7 +149,7 @@ namespace _42
 
         }
 
-        static IWorkerRepository CreateSqlRepository()
+        static SqlWorkerRepository CreateSqlRepository()
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = ".";
