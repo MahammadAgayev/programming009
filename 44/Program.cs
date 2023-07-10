@@ -48,7 +48,7 @@ namespace _44
                 DbType = DbOptions.OracleType
             };
 
-            IUnitOfWork db = DbFactory.Create(options);
+            //IUnitOfWork db = DbFactory.Create(options);
 
             //singletone
             //1 classdan yalnız 1 obyekt yaradılsın

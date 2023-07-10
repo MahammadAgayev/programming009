@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbFactory.cs" />
     <Compile Include="Domain\Abstract\IAuthorBookRepository.cs" />
     <Compile Include="Domain\Abstract\IAuthorRepository.cs" />
     <Compile Include="Domain\Abstract\IBookRepository.cs" />
