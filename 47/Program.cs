@@ -167,7 +167,6 @@ namespace _47
             {
 
 
-                stream.Dispose();
             }
 
             //StreamWriter
