@@ -186,25 +186,23 @@ namespace _41
 
             //Console.WriteLine(convertedAmount);
 
-             ;
+            //Console.WriteLine("Shape: ");
+            //string shapeType = Console.ReadLine();
 
-            Console.WriteLine("Shape: ");
-            string shapeType = Console.ReadLine();
+            //switch (shapeType)
+            //{
+            //    case "rectangle":
+            //        shape = new Rectangle();
+            //        break;
+            //    case "triangle":
+            //        shape = new Triangle();
+            //        break;
+            //}
 
-            switch (shapeType)
-            {
-                case "rectangle":
-                    shape = new Rectangle();
-                    break;
-                case "triangle":
-                    shape = new Triangle();
-                    break;
-            }
+            //shape.RequireParameters();
+            //double area = shape.CalculateArea();
 
-            shape.RequireParameters();
-            double area = shape.CalculateArea();
-
-            Console.WriteLine(area);
+            //Console.WriteLine(area);
         }
     }
 }
