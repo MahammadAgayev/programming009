@@ -34,6 +34,4 @@ namespace _49.Commands
             }
         }
     }
-
-
 }
