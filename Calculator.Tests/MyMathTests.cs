@@ -151,7 +151,6 @@ namespace Calculator.Tests
 
             // Assert
             Assert.True(a);
-
         }
 
         #endregion
